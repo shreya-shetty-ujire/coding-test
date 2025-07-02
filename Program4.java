@@ -3,7 +3,10 @@ import java.util.HashMap;
 public class Program4 {
     public static void getCountMap(int[] input) {
         HashMap<Integer, Integer> map = new HashMap<>();
-
+        if(input.length==0){
+            System.out.println("Array has no elements");
+            return;
+        }
         for (int num : input) {
             for (int i = 1; i <= 9; i++) {
                 if (num % i == 0) {
@@ -20,5 +23,8 @@ public class Program4 {
 
         int[] input2 = {2, 4 , 9, 18, 27, 36};
         getCountMap(input2);
+
+        int[] input3 = {};
+        getCountMap(input3);
     }
 }

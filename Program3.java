@@ -8,6 +8,12 @@ public class Program3 {
         System.out.print("Enter the number : ");
         int a = scanner.nextInt();
 
+        // Edge case
+        if (a < 0) {
+            System.out.println("Please enter a non-negative integer");
+            return;
+        }
+        
         // Count the number of odd numbers to print
         int count = (a % 2==0) ? a-1 : a;
 

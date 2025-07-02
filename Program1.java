@@ -21,19 +21,29 @@ public class Program1 {
             case "multiplication":
                 return num1 * num2;
             case "division":
-                if (num2 != 0) {
-                    return num1/num2;
+                if (num2 == 0) {
+                    System.out.print("Cannot divide by zero, ");
+                    return -1;
                 } else {
-                    throw new ArithmeticException("Cannot divide by zero.");
+                    return num1 / num2;
                 }
             default:
-                System.out.println("Invalid operation type: " + operation);
-                return 0;
+                System.out.print("Invalid operation type: " + operation + ", ");
+                return -1;
         }
     }
 
     public static void main(String[] args) {
-        Program1 calculator = new Program1(10.5, 2.0, "division");
-        System.out.println("Result: " + calculator.calculate());
+        Program1 example1 = new Program1(10.5, 2.0, "addition");
+        System.out.println("Result: " + example1.calculate());
+
+        Program1 example2 = new Program1(10, 0, "division");
+        System.out.println("Result: " + example2.calculate());
+
+        Program1 example3 = new Program1(10, 2, "division");
+        System.out.println("Result: " + example3.calculate());
+
+        Program1 example4 = new Program1(10, 5, "modulus");
+        System.out.println("Result: " + example4.calculate());
     }
 }
